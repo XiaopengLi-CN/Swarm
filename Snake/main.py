@@ -2,14 +2,18 @@ from FitnessFunction import chung_reynolds  # 导入适应度函数
 from SO import snake_optimization  # 导入蛇形优化算法
 import matplotlib.pyplot as plt  # 导入matplotlib库用于绘图
 
-# 定义维度(此处是求 30个变量 的 平方和的 zuixiaozhi) 
+# 设置字体为 SimHei
+plt.rcParams['font.sans-serif'] = ['SimHei']  # 用黑体显示中文
+plt.rcParams['axes.unicode_minus'] = False  # 解决负号显示问题
+
+# 定义维度(此处是求 "30个变量" 的 “平方和” 的 最小值)
 dim = 30  # 问题的维度，即解的变量个数
 # 定义最大的迭代次数
 max_iter = 1000  # 算法的最大迭代次数
 # 定义种群的的大小
 search_agents_no = 30  # 种群的大小，即搜索代理的数量
 # 定义边界
-solution_bound = [2, 100]  # 解的边界，表示每个变量的取值范围
+solution_bound = [-100, 100]  # 解的边界，表示每个变量的取值范围
 
 # 调用蛇形优化算法进行优化
 food, global_fitness, gene_best_fitness = snake_optimization(search_agents_no, max_iter, chung_reynolds, dim, solution_bound)
