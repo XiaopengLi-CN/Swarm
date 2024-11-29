@@ -1,14 +1,18 @@
 """
     蛇形优化算法的核心
 """
-import math
-import random
-
-import numpy as np
-
+import math  # 导入数学库，用于数学计算
+import random  # 导入随机库，用于生成随机数
+import numpy as np  # 导入NumPy库，用于矩阵和数组操作
 
 def snake_optimization(search_agents_no, max_iter, chung_reynolds, dim, solution_bound):
     # 初始化
+    # search_agents_no: 搜索代理的数量，即种群大小
+    # max_iter: 最大迭代次数
+    # chung_reynolds: 适应度函数
+    # dim: 维度
+    # solution_bound: 解的边界
+
     # vec_flag表示的是等一下我们的c2和c3是取正还是取负
     vec_flag = [1, -1]
     # 有没有食物的阈值
@@ -23,7 +27,7 @@ def snake_optimization(search_agents_no, max_iter, chung_reynolds, dim, solution
     c2 = 0.5
     # 常量c3,用于战斗和交配
     c3 = 2
-    # 生成种群
+    # 生成种群，随机初始化种群的位置
     X = solution_bound[0] + np.random.random_sample((search_agents_no, dim)) * (solution_bound[1] - solution_bound[0])
     # 将其转化成矩阵，主要的目的是为了和matlab中的步骤拟合，其实不转也可以，按照列表的方式计算也行
     X = np.matrix(X)
