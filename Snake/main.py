@@ -2,7 +2,7 @@ from FitnessFunction import chung_reynolds  # 导入适应度函数
 from SO import snake_optimization  # 导入蛇形优化算法
 import matplotlib.pyplot as plt  # 导入matplotlib库用于绘图
 
-# 定义维度
+# 定义维度(此处是求 30个变量 的 平方和的 zuixiaozhi) 
 dim = 30  # 问题的维度，即解的变量个数
 # 定义最大的迭代次数
 max_iter = 1000  # 算法的最大迭代次数
